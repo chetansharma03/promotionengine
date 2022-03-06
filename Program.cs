@@ -1,4 +1,5 @@
 ﻿using DataAccess.Entities;
+using PromotionEngine.Calculator;
 using PromotionEngine.Data;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace PromotionEngine
     {
         static void Main(string[] args)
         {
+            FacadeService _facedeService = new FacadeService();                
             OrderItem obj = new OrderItem();
             var products = obj.getAllProducts().ToList();
 
@@ -38,7 +40,7 @@ namespace PromotionEngine
                 }
             }
 
-
+            Console.WriteLine(_facedeService.CalculateOrder(order));
             Console.ReadLine();
         }
 
