@@ -1,4 +1,5 @@
 ﻿using DataAccess.Entities;
+using PromotionEngine.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,32 @@ namespace PromotionEngine
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Program.viewProducts());
+            OrderItem obj = new OrderItem();
+            var products = obj.getAllProducts().ToList();
+
+            //displaying Products and Promotions
+            Console.WriteLine(Program.viewProducts(products));
             Console.WriteLine(Program.ViewPromotions());
-            
+
+            //lets choose Products and quantity
+            var order = new Order();
+            foreach (var product in products)
+            {
+                bool repeat = true;
+                while (repeat)
+                {
+                    Console.Write($"Enter units of product {product.SKU}: ");
+                    string input = Console.ReadLine();
+
+                    int quantity;
+                    if (int.TryParse(input, out quantity))
+                    {
+                        repeat = false;
+                        order.Items.Add(new OrderItem() { SKU = product.SKU, Quantity = quantity, Price = product.Price });
+                    }
+                }
+            }
+
 
             Console.ReadLine();
         }
@@ -32,10 +56,8 @@ namespace PromotionEngine
             return promotionStr;
         }
 
-        public static string viewProducts()
+        public static string viewProducts(List<OrderItem> products)
         {
-            OrderItem obj = new OrderItem();
-            var products = obj.getAllProducts().ToList();
             string productsStr = products.Any() ? "All Products:" + Environment.NewLine : string.Empty;
 
             foreach (var product in products)
