@@ -16,6 +16,10 @@ namespace DataAccess.Entities
 
         public double PercentageDiscount { get; set; }
 
+        /// <summary>
+        /// for now data is hard coded, which should be from inmemory db or from persistent db
+        /// </summary>
+        /// <returns></returns>
         public List<Promotion> Promotions()
         {
             List<Promotion> lstPromotion = new List<Promotion>();
@@ -32,7 +36,7 @@ namespace DataAccess.Entities
                 Id = 2,
                 Quantity = 2,
                 SKU = "B",
-                Title = "3 B's for 48"
+                Title = "2 B's for 48"
             });
 
             lstPromotion.Add(new Promotion

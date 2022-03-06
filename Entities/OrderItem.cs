@@ -9,6 +9,10 @@ namespace DataAccess.Entities
         public string SKU { get; set; }
         public int Price { get; set; }
 
+        /// <summary>
+        /// we have harded items for now, it should be pulled from persistent db
+        /// </summary>
+        /// <returns></returns>
         public List<OrderItem> getAllProducts()
         {
             List<OrderItem> lstOrderItem = new List<OrderItem>();
