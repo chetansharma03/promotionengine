@@ -43,11 +43,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculatorService\BundleBusinessRules.cs" />
+    <Compile Include="CalculatorService\BundleDiscount.cs" />
+    <Compile Include="CalculatorService\CalculateService.cs" />
+    <Compile Include="CalculatorService\CalculatorTypeService.cs" />
+    <Compile Include="CalculatorService\FacadeService.cs" />
+    <Compile Include="CalculatorService\MultipleBusinessRules.cs" />
+    <Compile Include="CalculatorService\MultipleDiscount.cs" />
+    <Compile Include="Calculators\CalculateBase.cs" />
+    <Compile Include="Calculators\DefaultBase.cs" />
+    <Compile Include="Calculators\DefaultCalculator.cs" />
+    <Compile Include="Calculators\PromotionBase.cs" />
+    <Compile Include="Calculators\PromotionCalculator.cs" />
+    <Compile Include="Interface\ICalculate.cs" />
+    <Compile Include="Data\AnalizeOrderItems.cs" />
+    <Compile Include="Data\BundleItem.cs" />
+    <Compile Include="Data\CheckoutSummary.cs" />
+    <Compile Include="Data\CombinationBundleItem.cs" />
+    <Compile Include="Data\MultipleBundleItem.cs" />
+    <Compile Include="Data\Order.cs" />
+    <Compile Include="Data\SingleItem.cs" />
+    <Compile Include="Entities\OrderItem.cs" />
+    <Compile Include="Entities\Promotion.cs" />
+    <Compile Include="Enum\BundleType.cs" />
+    <Compile Include="Enum\DiscountType.cs" />
+    <Compile Include="Interface\ICalculateBusinesRule.cs" />
+    <Compile Include="Interface\ICalculateDiscountRule.cs" />
+    <Compile Include="Interface\ICalculatorType.cs" />
+    <Compile Include="Interface\IFacadeService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
